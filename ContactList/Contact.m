@@ -9,6 +9,15 @@
 #import "Contact.h"
 
 @implementation Contact
-
+- (id)initContact:(NSString *)name email:(NSString *)email // Stores contacts and emails
+{
+    self = [super init];
+    if (self)
+    {
+        self.name = name;
+        self.email = email;
+    }
+    return self;
+}
 
 @end

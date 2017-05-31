@@ -9,8 +9,7 @@
 #import "InputCollector.h"
 
 @implementation InputCollector
-
-- (NSString *)inputForPrompt:(NSString *)promptString
+- (NSString *)inputForPrompt:(NSString *)promptString // Takes in a single string parameter promptString and returns it
 {
     // 255 unit long array of characters
     char input[255];
@@ -19,9 +18,16 @@
     
     NSString *inputString = [NSString stringWithUTF8String:input];
     inputString = [inputString stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+    
     NSLog(@"You entered: %@", inputString); // Print as an NSString
     
     return inputString;
+}
+
+- (void)displayContacts
+{
+    NSString *displayContactList = @"";
+    
 }
 
 @end
