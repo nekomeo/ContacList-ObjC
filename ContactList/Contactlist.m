@@ -32,12 +32,12 @@
 
 -(void)displayContactList
 {
-    NSString *description = @"";
+  //  NSString *description = @"";
     
     for (Contact *contact in self.storedContacts)
     {
-        description = [description stringByAppendingString:[NSString stringWithFormat:@"%lu: <%@> <%@>\n", (unsigned long)[self.storedContacts indexOfObject:contact], contact.name, contact.email]];
-        NSLog(@"%@", description);
+        NSString *description = [NSString stringWithFormat:@"%lu: <%@>\n", (unsigned long)[self.storedContacts indexOfObject:contact], contact.name];
+        NSLog(@"\n%@", description);
     }
 }
 
