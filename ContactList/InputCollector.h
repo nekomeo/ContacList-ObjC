@@ -10,7 +10,8 @@
 
 @interface InputCollector : NSObject
 
-- (NSString *)inputForPrompt:(NSString *)promptString; // Takes in a single string parameter promptString
-- (void)displayContacts; // 
+@property NSMutableArray *inputArray;
+
+- (NSString *)inputForPrompt:(NSString *)promptString;
 
 @end

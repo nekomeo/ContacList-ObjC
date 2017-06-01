@@ -9,25 +9,30 @@
 #import "InputCollector.h"
 
 @implementation InputCollector
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self)
+    {
+        NSMutableArray *input = [NSMutableArray array];
+        _inputArray = input;
+    }
+    return self;
+}
+
 - (NSString *)inputForPrompt:(NSString *)promptString // Takes in a single string parameter promptString and returns it
 {
     // 255 unit long array of characters
     char input[255];
-    NSLog(@"Enter a name: ");
+    NSLog(@"%@", promptString);
     fgets(input, 255, stdin); // Limit inputs to max 255 characters
     
     NSString *inputString = [NSString stringWithUTF8String:input];
     inputString = [inputString stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+    NSString *trimmedString = [inputString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     
-    NSLog(@"You entered: %@", inputString); // Print as an NSString
-    
-    return inputString;
-}
-
-- (void)displayContacts
-{
-    NSString *displayContactList = @"";
-    
+    return trimmedString;
 }
 
 @end

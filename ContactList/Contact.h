@@ -12,7 +12,6 @@
 
 @property (nonatomic) NSString *name;
 @property (nonatomic) NSString *email;
-@property (nonatomic) NSMutableArray *phoneNumber;
 
 - (id)initContact:(NSString *)name email:(NSString *)email; // Stores contacts and emails
 

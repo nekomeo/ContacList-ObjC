@@ -16,14 +16,11 @@ int main(int argc, const char * argv[]) {
         
         InputCollector *inputCollector = [[InputCollector alloc] init]; // Call the InputCollector object
         Contactlist *contactList = [[Contactlist alloc] init];
-//        NSString *usernameInput = [inputCollector inputForPrompt:@"Enter your username"]; // example of calling InputCollector instance
         
-        BOOL runAgain = true;
-        while (runAgain)
+        while (true)
         {
-            // Main menu and user input
             NSString *initialInput = [inputCollector inputForPrompt:(@"What would you like to do?\nnew - Create a new contact\nlist - List all contacts\nquit - Exit Application\n")];
-            NSLog(@"%@", initialInput);
+            
             
             if ([initialInput isEqualToString:@"quit"]) // Exit function
             {
@@ -41,6 +38,7 @@ int main(int argc, const char * argv[]) {
             }
             else if ([initialInput isEqualToString:@"list"])
             {
+                [contactList displayContactList];
             }
         }
         

@@ -13,7 +13,6 @@
 
 @property NSMutableArray *storedContacts;
 
--(instancetype)init;
 -(void)addContact:(Contact *)newContact;
 -(void)displayContactList;
 
