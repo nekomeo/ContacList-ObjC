@@ -31,12 +31,25 @@
     NSLog(@"You added: %@ - %@", newContact.name, newContact.email);
 }
 
--(void)displayContactList
+- (void)displayContactList
 {
     for (Contact *contact in self.storedContacts)
     {
         NSString *description = [NSString stringWithFormat:@"%lu: <%@>\n", (unsigned long)[self.storedContacts indexOfObject:contact], contact.name];
         NSLog(@"%@", description);
+    }
+}
+
+- (void)showContactAtIndex:(NSInteger)index
+{
+    if ([self.storedContacts count] > index)
+    {
+        Contact *contact = [self.storedContacts objectAtIndex:index];
+        NSLog(@"Name: %@ \nEmail: %@", contact.name, contact.email);
+    }
+    else
+    {
+        NSLog(@"Does not exist");
     }
 }
 

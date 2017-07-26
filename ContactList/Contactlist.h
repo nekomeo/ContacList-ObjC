@@ -15,5 +15,6 @@
 
 -(void)addContact:(Contact *)newContact;
 -(void)displayContactList;
+- (void)showContactAtIndex:(NSInteger)index;
 
 @end

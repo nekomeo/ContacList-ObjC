@@ -40,9 +40,11 @@ int main(int argc, const char * argv[]) {
             {
                 [contactList displayContactList];
             }
-            else if ([initialInput isEqualToString:@"show"])
+            else if ([initialInput hasPrefix:@"show"])
             {
-                
+                NSArray *splitInput = [initialInput componentsSeparatedByString:@" "];
+                NSInteger indexNum = [splitInput[1] integerValue];
+                [contactList showContactAtIndex:indexNum];
             }
         }
         
