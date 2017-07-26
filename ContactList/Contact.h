@@ -13,6 +13,6 @@
 @property (nonatomic) NSString *name;
 @property (nonatomic) NSString *email;
 
-- (id)initContact:(NSString *)name email:(NSString *)email; // Stores contacts and emails
+- (instancetype)initContact:(NSString *)name email:(NSString *)email; // Stores contacts and emails
 
 @end

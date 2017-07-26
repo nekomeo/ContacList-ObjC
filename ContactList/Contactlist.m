@@ -26,18 +26,17 @@
 
 - (void)addContact:(Contact *)newContact
 {
+//    [_storedContacts addObject:newContact];
     [self.storedContacts addObject:newContact];
-    NSLog(@"You added: %@", newContact);
+    NSLog(@"You added: %@ - %@", newContact.name, newContact.email);
 }
 
 -(void)displayContactList
 {
-  //  NSString *description = @"";
-    
     for (Contact *contact in self.storedContacts)
     {
         NSString *description = [NSString stringWithFormat:@"%lu: <%@>\n", (unsigned long)[self.storedContacts indexOfObject:contact], contact.name];
-        NSLog(@"\n%@", description);
+        NSLog(@"%@", description);
     }
 }
 

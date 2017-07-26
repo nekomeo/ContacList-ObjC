@@ -19,7 +19,7 @@ int main(int argc, const char * argv[]) {
         
         while (true)
         {
-            NSString *initialInput = [inputCollector inputForPrompt:(@"What would you like to do?\nnew - Create a new contact\nlist - List all contacts\nquit - Exit Application\n")];
+            NSString *initialInput = [inputCollector inputForPrompt:(@"What would you like to do?\nnew - Create a new contact\nlist - List all contacts\nshow - show contact at certain index\nquit - Exit Application\n")];
             
             
             if ([initialInput isEqualToString:@"quit"]) // Exit function
@@ -29,8 +29,8 @@ int main(int argc, const char * argv[]) {
             }
             else if ([initialInput isEqualToString:@"new"])
             {
-                NSString *fullName = [inputCollector inputForPrompt:(@"What is your full name? ")];
-                NSString *email = [inputCollector inputForPrompt:(@"What is your email address? ")];
+                NSString *fullName = [inputCollector inputForPrompt:(@"What is your full name?")];
+                NSString *email = [inputCollector inputForPrompt:(@"What is your email address?")];
                 
                 Contact *newContact = [[Contact alloc] initContact:fullName email:email];
                 
@@ -39,6 +39,10 @@ int main(int argc, const char * argv[]) {
             else if ([initialInput isEqualToString:@"list"])
             {
                 [contactList displayContactList];
+            }
+            else if ([initialInput isEqualToString:@"show"])
+            {
+                
             }
         }
         
